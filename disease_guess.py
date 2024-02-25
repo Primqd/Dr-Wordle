@@ -1,6 +1,7 @@
 from openai import OpenAI
 from random import randint
 import streamlit as st
+import os
 
 OPENAI_API_KEY = st.getenv(st.secrets[openai_api])
 
