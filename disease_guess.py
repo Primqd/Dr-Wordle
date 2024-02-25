@@ -1,9 +1,7 @@
 from openai import OpenAI
 from random import randint
 import streamlit as st
-from dotenv import load_dotenv
 
-load_dotenv()
 OPENAI_API_KEY = st.getenv(st.secrets[openai_api])
 
 diseases = [
