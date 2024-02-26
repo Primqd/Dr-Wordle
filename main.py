@@ -1,8 +1,8 @@
 import streamlit as st
-from disease_guess import hint, guess, give_up, fun_fact, reload
+from guess_logic import hint, guess, give_up, fun_fact, reload
 from streamlit_js_eval import streamlit_js_eval
+
 curr = st.session_state
-z = 0
 
 def good(k, k_response = ""):
     if k == "True":
@@ -16,7 +16,7 @@ if 'hint' not in curr:
 if 'previous' not in curr:
     curr.previous = []
 
-image = st.image("diseasewordle.jpg")
+st.image("diseasewordle.jpg")
 
 st.markdown("<h5 style='text-align: center; color: white;'>Guess a hidden disease by typing in the box. Dr. Wordle will return shared features with the hidden disease.</h5>", unsafe_allow_html=True)
 
