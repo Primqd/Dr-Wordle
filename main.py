@@ -2,7 +2,6 @@ import streamlit as st
 from disease_guess import hint, guess, give_up, fun_fact, reload
 from streamlit_js_eval import streamlit_js_eval
 curr = st.session_state
-j = 0
 
 def good(k, k_response = ""):
     if k == "True":
