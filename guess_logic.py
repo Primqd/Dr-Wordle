@@ -1,10 +1,10 @@
 from openai import OpenAI
 from diseases import getDisease
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 # import os
 import streamlit as st
 
-load_dotenv()
+# load_dotenv()
 
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 OPENAI_API_KEY = st.getenv(st.secrets[openai_api])
