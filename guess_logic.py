@@ -7,8 +7,7 @@ import streamlit as st
 # load_dotenv()
 
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-OPENAI_API_KEY = st.secrets["openai_api"]
-print(st.secrets["openai_api"])
+OPENAI_API_KEY = st.secrets["chat_gpt_api_key "]
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
