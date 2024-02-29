@@ -8,6 +8,7 @@ import streamlit as st
 
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 OPENAI_API_KEY = st.secrets["openai_api"]
+print(st.secrets["openai_api"])
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
