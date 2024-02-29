@@ -23,9 +23,16 @@ def guess(guessed_disease):
     """
     response = client.chat.completions.create(
     model="gpt-3.5-turbo-0125",
+    seed = 0,
+    temperature = 0.2,
     messages=[
-        {"role": "user", "content": 
-        f"Return a common characteristic shared between {disease} and {guessed_disease} without mentioning the word {disease}. If {guessed_disease} and {disease} are the same, print the statement 'True' instead. If {guessed_disease} is not a disease, then print the statement 'False' instead."
+        {"role": "user", 
+        "content": 
+        f"""
+        If {guessed_disease} is a disease, return a specific characteristic shared between {disease} and {guessed_disease} (without mentioning the word {disease}, replacing it with 'the disease' in the response). 
+        However, if {guessed_disease} is not a disease, then print *only* the statement 'Not a disease, please try again.' instead.
+        Otherwise, if the two diseases are the same, print *only* the statement 'You got the word!' instead of the normal response. Be specific; diabetes in general is not the same as diabetes I or II!
+        """,
         }
     ]
     )
@@ -42,7 +49,6 @@ def hint():
     ]
     )
     return (response.choices[0].message.content)
-
 
 def give_up():
     """
